@@ -13,6 +13,7 @@ class Node():
         
 def CreateANew():
     new_node = Node()
+    pass
 
 def AddNewAttribute(listptr):
     if not listptr :
