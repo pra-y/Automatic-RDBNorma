@@ -12,8 +12,8 @@ class Node():
         self.ptrtonext = ptrtonext
         
 def CreateANew():
+    # It will create new node of FDs
     new_node = Node()
-    pass
 
 def AddNewAttribute(listptr):
     if not listptr :
@@ -74,7 +74,7 @@ def Algorithm_Normalization(Head, Flag3NF):
     
     
 def Create_tables():
-    T1 = union(A1, A3-dependent, A3-determiner)
+    T1 = table_union(A1, A3-dependent, A3-determiner)
     
     final_array = [T1]
     for i in range(len(A2-determiner)):
@@ -82,3 +82,22 @@ def Create_tables():
         final_array.append(T+str(i))
         
     return final_array
+
+
+def union(arr1,arr2):
+    arr1 = set(arr1)
+    arr2 = set(arr2)
+    resultant_array = arr1.union(arr2)
+    
+def table_union(arr1, arr2, arr3):
+    arr1 = set(arr1)
+    arr2 = set(arr2) 
+    arr3 = set(arr3)
+    resultant_array = arr1.union(arr2, arr3)
+    
+def subset(subarray, universal_array):
+    for i in subarray:
+        if i not in universal_array:
+            return False
+        
+    return True 
